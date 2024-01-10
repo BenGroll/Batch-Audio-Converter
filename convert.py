@@ -1,16 +1,13 @@
 import subprocess
-import os
 import sys
+import os
 
+cwd = os.getcwd()
 
-
-print("Input complete path of folder that contains input files")
-inp = input()
-infolder = r"" + inp
-print("Input complete path of folder that will contain output files")
-out = input()
-outfolder = r"" + out
-print("Input complete file extension that should replace current file extension(include the period. Example: '.aiff'")
+infolder = cwd + "\inputs"
+outfolder = cwd + "\outputs"
+print (infolder + " -> " + outfolder)
+print("Input complete file extension that should replace current file extension(dont include the period. Example: 'aiff', not '.aiff'")
 fex = input()
 
 wavfiles = os.listdir(infolder)
@@ -24,7 +21,7 @@ global filenumber
 filenumber = 0
 
 for file in wavfiles:
-    new_filename = file[:-3] + fex
+    new_filename = '.'.join(file.split(".")[:-1]) + "." + fex
     new_filepath = f'"{outfolder}\{new_filename}"'
     old_filepath = f'"{infolder}\{file}"'
     convert_one_file(inputpath=old_filepath, outputpath=new_filepath)
