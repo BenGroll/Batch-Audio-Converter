@@ -1,7 +1,11 @@
 # Batch-Audio-Converter
 
+# What does it do?
+This script allows you to batch-convert a list of audiofiles into another file type, e.g: a Folder full of .wav files can be converted into a Folder of .aiff files using just a single command.
+
 # Requirements:
 python has to be installed
+
 ffmpeg has to be installed
 
 How to install FFMPEG on Windows
